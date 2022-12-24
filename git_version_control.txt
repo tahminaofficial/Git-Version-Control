@@ -1,0 +1,184 @@
+only once per project
+
+$ git config --global user.name "Tahmina Akter"
+$ git config --global user.email "akter.djangodeveloper@gmail.com"
+$ git config --global push.default matching
+$ git config --global alias.co checkout
+$ git init
+
+-------------------------------------------------------------------------
+
+C:\Users\Tahmina Akter\github\dentist (master)
+(dentist) ? ls
+
+C:\Users\Tahmina Akter\github\dentist (master)
+(dentist) ? git add .  ---> add everything from our code directory to git repository
+
+C:\Users\Tahmina Akter\github\dentist (master)
+(dentist) ? git commit -m "Initial Commit"
+--------------------------------------------------- end 
+C:\Users\Tahmina Akter\github\dentist (master)
+? conda deactivate
+
+C:\Users\Tahmina Akter\github\dentist (master)
+λ cd..
+
+C:\Users\Tahmina Akter\github
+λ cd..
+
+C:\Users\Tahmina Akter
+λ md .ssh
+
+C:\Users\Tahmina Akter
+λ cd .ssh
+
+C:\Users\Tahmina Akter\.ssh
+λ pwd
+C:\Users\Tahmina Akter\.ssh
+
+C:\Users\Tahmina Akter\.ssh
+λ ls
+
+C:\Users\Tahmina Akter\.ssh
+λ ssh-keygen.exe
+
+C:\Users\Tahmina Akter\.ssh
+λ ls
+id_rsa  id_rsa.pub
+
+C:\Users\Tahmina Akter\.ssh
+λ cat id_rsa.pub
+---------------------------------------------------
+
+now go to github settings\SSH keys      
+
+C:\Users\Tahmina Akter\.ssh
+λ cd ..
+
+C:\Users\Tahmina Akter
+λ cd github\dentist
+
+C:\Users\Tahmina Akter\github\dentist (master)
+λ conda activate dentist
+
+C:\Users\Tahmina Akter\github\dentist (master)
+(dentist) λ ls
+db.sqlite3  dentist/  manage.py  static/  website/
+
+
+--------------------------------------------------------------- 
+Now Create new private repository from github then push 
+
+C:\Users\Tahmina Akter\github\dentist (master)
+(dentist) ? git remote add origin https://github.com/Akter-djangodeveloper/Kamrul_The_Dentist.git
+
+C:\Users\Tahmina Akter\github\dentist (master)
+(dentist) ? git push -u origin master
+
+
+------------------------------------------------------- 
+Now reload github and see all file stored from my pc
+
+when any changes to the code 
+
+C:\Users\Tahmina Akter\github\dentist (master)
+(dentist) ? git add . 
+
+C:\Users\Tahmina Akter\github\dentist (master)
+(dentist) ? git commit -m "tweaked about title"
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? git push 
+
+-------------------------------------------------------------
+now install heroku.exe
+now close CMDER and re-open -->
+
+C:\Users\Tahmina Akter
+? cd github\dentist
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+? conda activate dentist
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? python manage.py runserver
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? heroku --version
+heroku/7.42.2 win32-x64 node-v12.16.2
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? pip install gunicorn
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? pip install django-heroku
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? pip install dj-database-url
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? pip install python-decouple
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? touch Procfile
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? pip freeze
+asgiref==3.2.10
+beautifulsoup4==4.9.1
+certifi==2020.6.20
+dj-database-url==0.5.0
+Django==3.0.8
+django-bootstrap4==2.1.1
+django-heroku==0.3.1
+gunicorn==20.0.4
+importlib-metadata==1.7.0
+psycopg2==2.8.5
+python-decouple==3.3
+pytz==2020.1
+soupsieve==2.0.1
+sqlparse==0.3.1
+whitenoise==5.1.0
+wincertstore==0.2
+zipp==3.1.0
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? pip freeze > requirements.txt
+
+now open sublime > dentist > settings > procfile
+
+now go to cmder
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? git add .
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? git commit -m "tweaked app for heroku"
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? git push 
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? heroku login
+
+then go to heroku site and login
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? heroku keys:add
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? heroku create
+
+now go to heroku site  https://quiet-bastion-45577.herokuapp.com/
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? heroku rename dentistkamrul
+
+now go to heroku site  https://dentistkamrul.herokuapp.com/
+
+push the code on Heroku ( it can takes maximum 10 mins)
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? git push heroku master
+
+C:\Users\Tahmina Akter\github\dentist (master -> origin)
+(dentist) ? heroku config:set DISABLE_COLLECTSTATIC=1
